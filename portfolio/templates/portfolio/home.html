@@ -1,0 +1,12 @@
+<h1>This is the home page</h1>
+
+{% for project in project %}
+
+    <p>{{ project.title }}</p>
+    <p>{{ project.description }}</p>
+    <img src="{{project.image.url}}" width=100 height=100>
+    {% if project.url %}
+        <br><a href="https://en.wikipedia.org/wiki/Nebula">Link</a>
+    {% endif %}
+
+{% endfor %}
