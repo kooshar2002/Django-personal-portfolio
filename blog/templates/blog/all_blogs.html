@@ -1,1 +1,10 @@
-new blog
+<h1>The Blog Page</h1>
+
+{% for blog in blogs %}
+
+    <h2>{{ blog.title }}</h2>
+    {{ blog.date }}
+    <p>{{ blog.description }}</p>
+    
+
+{% endfor %}
