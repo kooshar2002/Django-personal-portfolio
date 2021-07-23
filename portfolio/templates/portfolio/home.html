@@ -1,12 +1,28 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
 <h1>This is the home page</h1>
 
-{% for project in project %}
+{% load static %}
 
-    <p>{{ project.title }}</p>
-    <p>{{ project.description }}</p>
-    <img src="{{project.image.url}}" width=100 height=100>
-    {% if project.url %}
-        <br><a href="project.url">Link</a>
-    {% endif %}
+<br>
 
-{% endfor %}
+<img src="{% static 'portfolio/1605599664.jpg' %}">
+
+<br>
+<br>
+<hr style="width:50%; margin: auto;">
+
+        {% for project in project %}
+            <div style="width: 100px; float: left; height: 100px; margin: 10px;">
+                <p>{{ project.title }}</p>
+                {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank">
+                        <img alt="Nebula" src="{{ project.image.url }}" width=100 height=100>
+                    </a>                    
+                {% endif %}
+                <p>{{ project.description }}</p>
+            </div>
+        {% endfor %}
+
+{% endblock %}
